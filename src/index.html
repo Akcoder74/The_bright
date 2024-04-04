@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bright Study | Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/Assets/TB (1).png" type="image/x-icon">
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between"> <!-- Changed justify-between -->
+            <a href="#" class="flex items-center p-4 bg-white">
+                <img src="/Assets/TB-removebg-preview.png" alt="Icon" class="w-12 h-12 ">
+                <span class="ml-4 text-xl font-medium text-gray-800">The Bright</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center" id="menu">
+                <div class="relative">
+                    <button id="dropdownHoverButton" class="mr-5 hover:text-gray-900 focus:outline-none">Use me</button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-full right-0">
+                        <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownHoverButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- User dropdown menu -->
+                <div class="relative">
+                    <button id="userDropdownButton" class="mr-5 hover:text-gray-900 focus:outline-none">User</button>
+                    <!-- User dropdown menu -->
+                    <div id="userDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-full right-0">
+                        <ul class="py-2 text-sm text-gray-700" aria-labelledby="userDropdownButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100"">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+            // Dropdown menu toggle
+            const dropdownHoverButton = document.getElementById("dropdownHoverButton");
+            const dropdownHover = document.getElementById("dropdownHover");
+
+            dropdownHoverButton.addEventListener("click", function () {
+                dropdownHover.classList.toggle("hidden");
+            });
+
+            // Close dropdown menu when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!dropdownHoverButton.contains(event.target) && !dropdownHover.contains(event.target)) {
+                    dropdownHover.classList.add("hidden");
+                }
+            });
+            
+            // User dropdown menu toggle
+            const userDropdownButton = document.getElementById("userDropdownButton");
+            const userDropdown = document.getElementById("userDropdown");
+
+            userDropdownButton.addEventListener("click", function () {
+                userDropdown.classList.toggle("hidden");
+            });
+
+            // Close user dropdown menu when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!userDropdownButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add("hidden");
+                }
+            });
+    </script>
+</body>
+</html>
